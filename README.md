@@ -21,8 +21,6 @@ A arquitetura, a versão mínima do iOS, a persistência e as dependências exte
 | Controle de versão | Git |
 | Hospedagem e revisão de alterações | GitHub |
 
-A toolchain Swift e o suporte à linguagem no editor ainda precisam ser configurados e validados. As versões utilizadas serão documentadas após essa validação.
-
 ## Ambientes de desenvolvimento
 
 ### Linux
