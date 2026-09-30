@@ -71,6 +71,26 @@ Alterações produzidas com assistência de IA seguem os mesmos critérios de re
 
 ## Configuração, execução e testes
 
-Os procedimentos de configuração, compilação e testes serão documentados à medida que forem implementados e validados.
+O ambiente Linux foi validado para compilação e testes de código Swift independente de APIs específicas do iOS. No VS Code, foram verificados navegação, sugestões de código, diagnósticos, execução de testes e depuração com breakpoint.
 
-Ainda não há instruções de execução do aplicativo nem uma estratégia de testes estabelecida.
+### Versões de referência
+
+Versões utilizadas nas validações realizadas em setembro de 2026:
+
+| Componente | Versão |
+|---|---|
+| Swiftly | 1.2.0 |
+| Swift | 6.4 |
+| VS Code | 1.139.1 |
+| Extensão Swift (`swiftlang.swift-vscode`) | 2.16.7 |
+| LLDB DAP (`llvm-vs-code-extensions.lldb-dap`) | 0.4.1 |
+
+Esses registros descrevem o ambiente validado e não estabelecem versões mínimas de compatibilidade do aplicativo.
+
+### Testes
+
+A [estratégia inicial de testes](docs/testes.md) define ferramentas, ambientes de execução e critérios de revisão.
+
+Os exercícios de validação foram executados em um laboratório separado. Este repositório ainda não contém um pacote Swift ou projeto Xcode executável.
+
+A compilação do aplicativo iOS e sua validação no Simulator ou em dispositivo serão estabelecidas quando o projeto Xcode for criado.
