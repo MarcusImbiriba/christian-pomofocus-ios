@@ -85,6 +85,10 @@ Apresentar comandos e roteiro manual proporcionais à mudança. O responsável c
 
 Revisar o diff final e os arquivos preparados antes do commit. Executar commit e push pelo responsável autorizado; criar PR para `main`, vinculada à Issue, com problema, resultado, validações e limitações. Incluir `Closes #NUMERO` quando a PR resolver integralmente a Issue. Realizar revisão humana e resolver observações antes do merge. Integração direta em `main` exige exceção explícita para a alteração.
 
+Ao apresentar os dados para criação de uma PR, informar sempre título, descrição, branches de origem/destino, **Labels**, **Projects** e **Milestone**. Usar metadados pertinentes à Issue e aos registros existentes; quando algum campo não se aplicar, declarar isso. Distinguir valores sugeridos de associações efetivamente conferidas no GitHub, sem presumir que os metadados da Issue foram copiados para a PR.
+
+Conferir esses campos na PR antes da integração e registrar a evidência no item correspondente da fase 4, sem alterar a estrutura do modelo padrão.
+
 ### 5. Integração
 
 Integrar por Merge commit, preservando commits individuais. Excluir a branch remota pela interface web do GitHub antes de sincronizar o repositório local. Conferir alterações locais, atualizar `main` e remover a branch local somente após confirmar a integração. Conferir encerramento da Issue e estado do Project; só então concluir o checklist da entrega.
