@@ -4,9 +4,21 @@ Repositório do aplicativo nativo para iPhone/iOS Christian PomoFocus, com Swift
 
 ## Estado do projeto
 
-O projeto está na etapa de planejamento do produto e início do desenvolvimento da lógica portável. O núcleo de uma sessão de foco está em desenvolvimento no pacote `FocusCore`, pela [Issue #13](https://github.com/MarcusImbiriba/christian-pomofocus-ios/issues/13); o escopo de cada entrega é definido nas Issues.
+O projeto está na etapa de planejamento do produto e desenvolvimento inicial. O núcleo de uma sessão de foco foi integrado no pacote `FocusCore` pela [PR #14](https://github.com/MarcusImbiriba/christian-pomofocus-ios/pull/14), que encerrou a [Issue #13](https://github.com/MarcusImbiriba/christian-pomofocus-ios/issues/13).
 
-A arquitetura, a versão mínima do iOS, a persistência e as dependências externas permanecem em avaliação.
+A [Issue #15](https://github.com/MarcusImbiriba/christian-pomofocus-ios/issues/15), aberta na consulta de 2026-10-19, define a próxima entrega aprovada: aplicativo SwiftUI integrado ao núcleo e validação no Simulator. O estado de execução dessa entrega pertence à Issue.
+
+A PR #14 registra execução pelo Humano de 24 testes aprovados no Linux, com código de saída 0. Esse registro não comprova compilação ou funcionamento do aplicativo iOS e não representa uma nova execução nesta revisão documental.
+
+A versão mínima aprovada para o aplicativo é **iOS 17**, conforme a Issue #15. Arquitetura completa, persistência, sincronização/armazenamento e dependências externas do aplicativo permanecem em avaliação. O núcleo já entregue é um pacote sem dependências externas; isso não define a arquitetura completa. As escolhas futuras devem privilegiar simplicidade, testabilidade e manutenção.
+
+Permanecem pendentes as regras completas de segundo plano e recuperação após encerramento. A estratégia inicial de testes está em [docs/testes.md](docs/testes.md); testes específicos e evidências da integração iOS serão definidos nas entregas correspondentes.
+
+## Documentação do produto
+
+A [Visão Geral do Projeto](docs/visao-geral-do-projeto.md) apresenta propósito, público, valor e direção. Os detalhes estão em [Definição do MVP](docs/definicao-do-mvp.md), [Experiência e conteúdo](docs/experiencia-e-conteudo.md), [Validação do produto](docs/validacao-do-produto.md) e [Estratégia de negócio](docs/estrategia-de-negocio.md).
+
+O chat “Visão Geral do Projeto” apoia a elaboração desses documentos. Issues/PRs guardam escopo e evidências; o Project guarda prioridade e andamento. O Vault mantém decisões e aprendizados e aponta para o VGP, sem duplicá-lo. A biblioteca local é material de consulta; DFE é utilizada sob demanda e sua preparação não comprova validação das hipóteses do produto.
 
 ## Tecnologias e ferramentas
 
@@ -33,7 +45,9 @@ O desenvolvimento e os testes de lógica independente das APIs específicas do i
 
 As atividades que exigem o SDK do iOS, SwiftUI Preview, iOS Simulator, assinatura e distribuição serão realizadas em ambiente macOS com Xcode.
 
-Um Mac remoto estará disponível quando necessário. Sua configuração e validação prática ocorrerão no primeiro teste de interface; compilação iOS, Simulator e testes específicos da plataforma Apple ainda não foram validados.
+O acesso ao Mac remoto por RDP foi aprovado na Issue #15. A preparação do ambiente será documentada no contexto correspondente, com registro das versões de macOS, Xcode, Swift e Simulator e conferência de compatibilidade com o pacote FocusCore.
+
+A validação de compilação iOS, interface SwiftUI, Simulator e testes específicos da plataforma Apple permanece pendente nas evidências consultadas em 2026-10-19. Limitações ainda não identificadas do ambiente remoto constituem risco operacional; a validação de Swift no Linux não elimina esse risco.
 
 ## Processo de contribuição
 
