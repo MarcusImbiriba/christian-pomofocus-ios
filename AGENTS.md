@@ -14,11 +14,11 @@ Aplicativo nativo para iPhone/iOS, em Swift e SwiftUI. Priorizar simplicidade e 
 ## Checklist Humano ↔ IA
 
 - Consultar obrigatoriamente [docs/fluxo-de-trabalho.md](docs/fluxo-de-trabalho.md) ao iniciar uma Issue e adotar seu modelo padrão em cada entrega, preservando cabeçalho, cinco fases, ordem, próxima ação e legenda. Atualizar estados e responsáveis; detalhar subitens sem substituir a estrutura.
-- Usar fases e itens com identificadores estáveis: `1`, `1.1`, `1.2`. Cada item deve indicar estado, ação verificável e responsável (Humano ou IA).
+- Usar fases e itens com identificadores estáveis: `1`, `1.1`, `1.2`, sem renumerar os existentes. Cada item deve indicar estado, ação verificável e responsável (Humano ou IA). Separar o acompanhamento do roteiro de execução, referenciando os mesmos identificadores.
 - Estados: `[ ]` pendente; `[-]` em andamento; `[x]` concluído e validado; `[!]` bloqueado ou aguardando decisão/autorização; `[?]` atenção ou decisão relevante.
-- Registrar executor e evidência ao concluir. Distinguir relato humano de resultado conferido pela IA; não afirmar validação sem evidência. Aprovação do escopo e autorização de execução são itens distintos.
+- Registrar executor e evidência ao concluir, consolidando referências por fase sem duplicação desnecessária. Distinguir relato humano de resultado conferido pela IA; não afirmar validação sem evidência. Aprovação do escopo e autorização de execução são itens distintos.
 - Concluir uma fase somente quando seus itens obrigatórios estiverem concluídos. Explicar bloqueios e quem pode resolvê-los; não marcar tarefa apenas futura como bloqueada.
-- Ao encerrar cada etapa, mostrar a fase atual e resumir as anteriores, preservando pendências. Terminar com a próxima ação e seu responsável.
+- Indicar a etapa atual no cabeçalho. Nas rodadas intermediárias, resumir fases concluídas e detalhar a atual, preservando pendências; apresentar o checklist completo no encerramento da entrega ou quando solicitado. Registrar itens não aplicáveis como `N/A — motivo`, preservando identificadores. Terminar com uma próxima ação concreta e seu responsável.
 
 ## Fluxo e Git
 
