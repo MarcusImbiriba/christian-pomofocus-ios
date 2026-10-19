@@ -12,60 +12,84 @@ Commits, pushes, merges, instalações, configurações globais, operações des
 
 ## Uso do checklist
 
-- Preservar cabeçalho, cinco fases, ordem, próxima ação e legenda. Nas entregas concretas, numerar subitens com identificadores estáveis, como `1.1` e `1.2`, e indicar responsáveis em “Execução combinada” ou em cada item.
-- Iniciar cada rodada com o checklist resumido das tarefas previstas, depois explicar sua execução passo a passo e terminar com o mesmo checklist atualizado em bloco de texto editável. Agrupar ações relacionadas para reduzir trocas, respeitando dependências, revisões e autorizações.
-- Mostrar a fase atual e resumir as anteriores sem perder pendências. Registrar executor e evidência junto aos itens concluídos: saída de comando, diff, URL ou aprovação explícita, conforme a ação.
+- Preservar cabeçalho, cinco fases, ordem, próxima ação e legenda. Usar identificadores estáveis, como `1.1` e `1.2`, e indicar responsáveis em cada item. Não renumerar itens existentes; acrescentar novos identificadores ou subtarefas quando necessário.
+- Separar o checklist de acompanhamento do roteiro de execução. O checklist registra ações verificáveis, estados e responsáveis; comandos e explicações ficam no roteiro, referenciados pelos mesmos identificadores. Detalhar subtarefas somente quando ajudarem a execução.
+- Iniciar cada rodada de execução com o checklist resumido das tarefas previstas, explicar o roteiro necessário e terminar com a versão atualizada em bloco de texto editável. Nas rodadas intermediárias, resumir fases concluídas e detalhar a atual, preservando as cinco fases e todas as pendências. Apresentar a versão completa no encerramento da entrega ou quando solicitada. Perguntas pontuais sem avanço da entrega podem receber resposta direta.
+- Indicar a etapa atual no cabeçalho. Consolidar evidências e decisões por fase, referenciando os itens: saída de comando, diff, URL ou aprovação explícita, conforme a ação. Registrar executor e origem da evidência sem repetir conteúdo já disponível na Issue, PR ou roteiro.
 - Distinguir resultado informado pelo Humano de resultado conferido pela IA. Um relato pode ser registrado como tal, sem afirmar verificação independente. Usar `[x]` somente quando houver evidência suficiente para o critério do item.
 - Marcar uma fase concluída somente quando todos os itens obrigatórios estiverem concluídos. Não tratar uma atividade futura como bloqueada.
-- Para item não aplicável, substituir sua marcação por `Não se aplica — motivo`, preservando sua posição e identificador. Não marcá-lo como executado; itens justificadamente não aplicáveis não impedem a conclusão da fase.
+- Para item não aplicável, substituir sua marcação por `N/A — motivo`, preservando sua posição, identificador e responsável. Não marcá-lo como executado; itens justificadamente não aplicáveis não impedem a conclusão da fase.
 - Em erro ou interrupção, marcar o item afetado com `[!]`, registrar mensagem/saída, impacto e responsável pela próxima ação. Preservar os itens concluídos e aguardar a informação ou autorização necessária. Usar `[?]` para atenção sem bloqueio e `[-]` para trabalho em curso.
 - O Humano pode editar o checklist e devolvê-lo com resultados, correções ou pedidos de execução. A IA retoma do ponto registrado, conferindo evidências e respeitando o escopo autorizado.
+- Nas pendências de decisão, indicar o item, a pergunta e quem pode resolvê-la. Aprovação do escopo e autorização de execução devem permanecer em itens separados. Terminar com uma única próxima ação concreta e seu responsável.
 
 ## Modelo padrão
 
 ```text
-Issue: <número e título>
+Issue: #<número> — <título>
+URL: <link>
 Objetivo: <resultado observável>
-Branch: <branch vinculada à Issue>
-Execução combinada: <ações do humano e ações autorizadas à IA>
+Branch: <nome e situação>
+PR: <link ou ainda não criada>
+Etapa atual: <fase/item>
+Execução combinada: <responsabilidades e limites da autorização>
 
 [ ] 1. Preparação
-    [ ] Escopo, exclusões e critérios de aceite definidos.
-    [ ] Decisões necessárias aprovadas pelo humano.
-    [ ] Estado Git inspecionado e branch criada/publicada.
+    [ ] 1.1 Consultar instruções, contexto e dependências — IA.
+    [ ] 1.2 Definir escopo, exclusões e critérios de aceite — IA e Humano.
+    [ ] 1.3 Aprovar decisões necessárias e escopo — Humano.
+    [ ] 1.4 Conferir Issue, Labels, Project e Milestone — Humano e IA.
+    [ ] 1.5 Inspecionar Git e criar/publicar branch vinculada — IA e Humano.
+    [ ] 1.6 Registrar autorização e responsáveis pela execução — Humano.
+    Evidências: <referências breves aos itens concluídos>
+    Pendências/decisões: <item — pergunta ou impedimento — responsável>
 
 [ ] 2. Implementação
-    [ ] Alterações restritas ao escopo.
-    [ ] Comportamentos relevantes cobertos por testes pertinentes.
-    [ ] Diff revisado pela IA.
+    [ ] 2.1 Executar alterações dentro do escopo autorizado — <Humano/IA>.
+    [ ] 2.2 Cobrir comportamentos relevantes com testes pertinentes — IA.
+    [ ] 2.3 Revisar diff e conferir escopo — IA.
+    Evidências: <arquivos, revisão ou referências>
+    Pendências/decisões: <preencher quando houver>
 
 [ ] 3. Validação
-    [ ] Comandos e verificações manuais apresentados.
-    [ ] Execução realizada pelo responsável combinado.
-    [ ] Resultados, evidências e limitações registrados.
-    [ ] Critérios de aceite conferidos.
+    [ ] 3.1 Apresentar roteiro e resultados esperados — IA.
+    [ ] 3.2 Executar verificações pelo responsável combinado — <Humano/IA>.
+    [ ] 3.3 Conferir resultados e registrar limitações — IA.
+    [ ] 3.4 Conferir critérios de aceite e aceite humano — IA e Humano.
+    Evidências: <executor, ambiente, resultado e origem da evidência>
+    Pendências/decisões: <preencher quando houver>
 
 [ ] 4. Entrega e revisão
-    [ ] Diff final revisado e commits preparados.
-    [ ] Commit e push executados pelo responsável autorizado.
-    [ ] PR vinculada à Issue, com resultados da validação.
-    [ ] Revisão humana concluída e observações resolvidas.
+    [ ] 4.1 Revisar diff final e preparar commit — IA e Humano.
+    [ ] 4.2 Executar commit e push — <responsável autorizado>.
+    [ ] 4.3 Criar PR vinculada, com validação e metadados — Humano.
+    [ ] 4.4 Concluir revisão humana e resolver observações — Humano e IA.
+    Evidências: <commits, PR, metadados e aprovação>
+    Pendências/decisões: <preencher quando houver>
 
 [ ] 5. Integração
-    [ ] Merge commit realizado.
-    [ ] Branch remota excluída pela interface do GitHub.
-    [ ] Main local sincronizada e branch local removida com segurança.
-    [ ] Issue e Project atualizados.
+    [ ] 5.1 Realizar Merge commit — Humano.
+    [ ] 5.2 Excluir branch remota pela interface GitHub — Humano.
+    [ ] 5.3 Sincronizar main e remover branch local com segurança — Humano.
+    [ ] 5.4 Conferir encerramento da Issue e atualizar Project — Humano/IA.
+    Evidências: <merge, estado Git e situação da Issue/Project>
+    Pendências/decisões: <preencher quando houver>
 
-Próxima ação: <ação — responsável>
+Ajustes solicitados pelo Humano:
+<referenciar o item e descrever o ajuste, quando houver>
+
+Próxima ação: <uma ação concreta — responsável>
 
 Legenda:
 [ ] Pendente.
 [-] Em andamento.
-[x] Concluído e validado.
-[!] Bloqueado ou aguardando decisão/autorização.
+[x] Concluído e validado, com evidência registrada.
+[!] Bloqueado ou aguardando decisão/autorização necessária.
 [?] Atenção, risco ou decisão relevante.
+N/A — Não aplicável; registrar justificativa no próprio item.
 ```
+
+Substituir os responsáveis entre `<...>` pelo executor combinado. Ajustar responsáveis predefinidos quando houver autorização específica, como criação de PR pela IA. Campos sem ocorrências podem ser preenchidos com `Nenhuma`, sem criar tarefas para preenchê-los.
 
 ## Procedimento por fase
 
